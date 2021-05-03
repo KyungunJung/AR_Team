@@ -1,0 +1,9 @@
+AR_CONTENTS/.vsconfig
+AR_CONTENTS/Library/
+AR_CONTENTS/obj/
+AR_CONTENTS/Logs/
+AR_CONTENTS/Temp/
+AR_CONTENTS/Usersetting/
+AR_CONTENTS/*.csproj
+AR_CONTENTS/*.sln
+AR_CONTENTS/.vs
