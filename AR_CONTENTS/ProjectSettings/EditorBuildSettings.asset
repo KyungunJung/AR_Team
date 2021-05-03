@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/KJ/Scene/KJ_Title.unity
+    guid: c91bc62ab13b6164bb332b8f22b88ff3
+  - enabled: 1
+    path: Assets/KJ/Scene/FirstScene.unity
+    guid: 845999c247b6db24288576527d584a7a
+  - enabled: 1
+    path: Assets/KJ/Scene/EndingScene.unity
+    guid: 00f63b7fbb86d7f4bb1029d2d11ef155
   m_configObjects: {}
