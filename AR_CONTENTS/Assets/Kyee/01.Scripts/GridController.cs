@@ -8,20 +8,20 @@ public class GridController : MonoBehaviour
     public GameObject target;
     public GameObject chair;
     
-    
+
     Vector3 truePos;
     public float gridSize;
     public GameObject tile;
 
     private void Start()
     {
-        chair.transform.position = new Vector3(0, 0, 0);
+        chair.transform.position = new Vector3(0, 0, 0); 
     }
 
 
     void Update()
     {
-        
+
         
 
         truePos.x = Mathf.Floor(target.transform.position.x / gridSize) * gridSize;
@@ -32,6 +32,7 @@ public class GridController : MonoBehaviour
         
         
     }
+
 }
 
 
