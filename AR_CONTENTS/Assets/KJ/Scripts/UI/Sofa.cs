@@ -32,6 +32,7 @@ public class Sofa : MonoBehaviour
         {
             gameObject.SetActive(true);
             gameObject.transform.position = hit.point;
+            print("¾ÈµÇ³Ä");
         }
         print("µÊ");
     }
