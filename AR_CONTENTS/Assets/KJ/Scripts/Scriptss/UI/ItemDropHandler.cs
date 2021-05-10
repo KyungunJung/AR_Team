@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 public class ItemDropHandler : MonoBehaviour, IDropHandler
 {
-    public GameObject sofa;
     public void OnDrop(PointerEventData eventData)
     {
         RectTransform invPanel = transform as RectTransform;

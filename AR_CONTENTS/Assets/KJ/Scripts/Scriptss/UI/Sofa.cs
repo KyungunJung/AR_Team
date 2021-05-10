@@ -3,35 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Sofa : MonoBehaviour
-{
-    public string Name
-    {
-        get
-        {
-            return "Sofa";
-        }
-    }
-    public Sprite _Image = null;
+{  public GameObject Target;
+    public GameObject grid;
 
-    public Sprite Image
+    private void OnTriggerEnter(Collider other)
     {
-        get
+        if (Target.transform.tag == "Grid")
         {
-            return _Image;
-        }
-    }
-    public void OnPickup()
-    {
-        gameObject.SetActive(false);
-    }
-    public void OnDrop()
-    {
-        RaycastHit hit = new RaycastHit();
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast(ray, out hit, 1000))
-        {
-            gameObject.SetActive(true);
-            gameObject.transform.position = hit.point;
+            Target.SetActive(true);
+            print("ตส");
         }
     }
 }
