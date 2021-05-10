@@ -1613,9 +1613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f340474ad6114c34692ea51587f162f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  models:
-  - {fileID: 0}
-  - {fileID: 0}
+  trChair: {fileID: 1822954754}
 --- !u!1 &963499973
 GameObject:
   m_ObjectHideFlags: 0
