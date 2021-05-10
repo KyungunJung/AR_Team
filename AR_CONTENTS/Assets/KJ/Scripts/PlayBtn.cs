@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PlayBtn : MonoBehaviour
 {
-public void OnClickBtn()
+    public void OnClickBtn()
     {
-        SceneManager.LoadScene("FirstScene1");
+        SceneManager.LoadScene("Quest");
     }
 
 }
