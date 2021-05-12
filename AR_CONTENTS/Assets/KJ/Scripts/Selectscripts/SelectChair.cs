@@ -8,6 +8,7 @@ public class SelectChair : MonoBehaviour
     ItemDragHandler itemIndex;
     private GameObject target;
     ObjMove objMove;
+    public GameObject gridTile;
     public enum Furniture_Type
     {
         Sofa,
@@ -29,7 +30,7 @@ public class SelectChair : MonoBehaviour
 
     {
 
-        if (Input.GetMouseButtonDown(2))
+        if (Input.GetMouseButton(0))
 
         {
 
@@ -40,6 +41,12 @@ public class SelectChair : MonoBehaviour
             {
 
                 objMove.trTarget = furniture[1].transform;
+                if(objMove.trTarget.transform.position == gridTile.transform.position)
+                {
+
+                    print("¸ÂÀ½");
+                }
+
 
             }
 

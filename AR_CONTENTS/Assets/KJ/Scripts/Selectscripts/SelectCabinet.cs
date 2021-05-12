@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class SelectCabinet : MonoBehaviour
 {
     int _index;
     ItemDragHandler itemIndex;
     private GameObject target;
     ObjMove objMove;
+    public GameObject gridTile2;
+    public GameObject dustFactory;
+    
     public enum Furniture_Type
     {
         Sofa,
@@ -29,7 +33,7 @@ public class SelectCabinet : MonoBehaviour
 
     {
 
-        if (Input.GetMouseButtonDown(2))
+        if (Input.GetMouseButton(0))
 
         {
 
@@ -40,9 +44,29 @@ public class SelectCabinet : MonoBehaviour
             {
 
                 objMove.trTarget = furniture[3].transform;
+                if(objMove.trTarget.transform.position == gridTile2.transform.position)
+                {
+                    print("¸ÂÀ½");
+
+                }
+                    
+                
+
 
             }
 
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+
+            if(objMove.trTarget.transform.position == gridTile2.transform.position)
+            {
+
+                GameObject dust = Instantiate(dustFactory);
+                dust.transform.position = transform.position;
+                print("¶®À½");
+            }
         }
 
     }
