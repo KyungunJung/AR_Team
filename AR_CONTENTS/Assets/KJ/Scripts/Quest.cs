@@ -10,7 +10,7 @@ public class Quest : MonoBehaviour
     }
     IEnumerator NextScene()
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(5);
         SceneManager.LoadScene("FirstScene");
 
     }
