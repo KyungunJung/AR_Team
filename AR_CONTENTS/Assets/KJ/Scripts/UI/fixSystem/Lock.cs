@@ -16,12 +16,13 @@ public class Lock : MonoBehaviour
 
     public void OnClicklock()
     {
+      
+                Script.GetComponentInParent<Select>().SetRock();
 
-        Script.GetComponentInParent<Select>().SetRock();
-
-        UnlockBtn.SetActive(true);
-        gameObject.SetActive(false);
-        print("고정");
+                UnlockBtn.SetActive(true);
+                gameObject.SetActive(false);
+                print("고정");
+            
 
     }
 }

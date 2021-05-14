@@ -14,6 +14,7 @@ public class Select : MonoBehaviour
     public GameObject gridTile;
     public GameObject dustFactory;
 
+
     public int furnitureIdx;
 
 
@@ -45,60 +46,74 @@ public class Select : MonoBehaviour
 
 
 
+
         if (Input.GetMouseButtonDown(0))
         {
 
             target = GetClickedObject();
+            
             if (target != null && target.Equals(gameObject))  //선택된게 나라면
             {
                 objMove.trTarget = furniture[furnitureIdx].transform;
-                print("D");
+
+                if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)== false)//UI위에 있으면 if안의 것 하지마라
+                {
+                    print("인식");
+
+                    //타겟 값을 null값으로 빼주자.
+
+                    objMove.trTarget = null;
+
+
+                    print("D");
+                }
+
             }
 
         }
 
-        if (Input.GetMouseButtonUp(0))
+        //    if (Input.GetMouseButtonUp(0))
+        //    {
+
+        //        if (objMove.trTarget.transform.position == gridTile.transform.position)
+        //        {
+
+        //            GameObject dust = Instantiate(dustFactory);
+        //            dust.transform.position = transform.position;
+        //            print("땠음");
+        //        }
+        //    }
+    }
+    private GameObject GetClickedObject()
+
+    {
+        RaycastHit hit;
+
+        GameObject target = null;
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //마우스 포인트 근처 좌표를 만든다. 
+
+        if (true == (Physics.Raycast(ray.origin, ray.direction, out hit)))   //마우스 근처에 오브젝트가 있는지 확인
+
         {
 
-            if (objMove.trTarget.transform.position == gridTile.transform.position)
-            {
+            _index = itemIndex.index;
+            target = hit.transform.gameObject;
 
-                GameObject dust = Instantiate(dustFactory);
-                dust.transform.position = transform.position;
-                print("땠음");
-            }
+        }
+        return target;
+    }
+
+    public void SetRock()
+    {
+        enabled = false;
+
+        if (objMove.trTarget != null)
+        {
+            objMove.trTarget = null;
         }
     }
-        private GameObject GetClickedObject()
-
-        {
-            RaycastHit hit;
-
-            GameObject target = null;
-
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //마우스 포인트 근처 좌표를 만든다. 
-
-            if (true == (Physics.Raycast(ray.origin, ray.direction, out hit)))   //마우스 근처에 오브젝트가 있는지 확인
-
-            {
-
-                _index = itemIndex.index;
-                target = hit.transform.gameObject;
-
-            }
-            return target;
-        }
-
-        public void SetRock()
-        {
-            enabled = false;
-
-            if (objMove.trTarget != null)
-            {
-                objMove.trTarget = null;
-            }
-        }
-    }
+}
 
 
 
