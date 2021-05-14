@@ -9,7 +9,7 @@ public class SelectCabinet : MonoBehaviour
     ItemDragHandler itemIndex;
     private GameObject target;
     ObjMove objMove;
-    public GameObject gridTile2;
+    public GameObject gridTile;
     public GameObject dustFactory;
     
     public enum Furniture_Type
@@ -39,12 +39,12 @@ public class SelectCabinet : MonoBehaviour
 
             target = GetClickedObject();
             print("D");
-            if (target.Equals(gameObject))  //선택된게 나라면
+            if (target != null && target.Equals(gameObject))  //선택된게 나라면
 
             {
 
                 objMove.trTarget = furniture[3].transform;
-                if(objMove.trTarget.transform.position == gridTile2.transform.position)
+                if(objMove.trTarget.transform.position == gridTile.transform.position)
                 {
                     print("맞음");
 
@@ -60,7 +60,7 @@ public class SelectCabinet : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
 
-            if(objMove.trTarget.transform.position == gridTile2.transform.position)
+            if(objMove.trTarget.transform.position == gridTile.transform.position)
             {
 
                 GameObject dust = Instantiate(dustFactory);

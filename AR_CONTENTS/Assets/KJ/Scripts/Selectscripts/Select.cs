@@ -8,6 +8,8 @@ public class Select : MonoBehaviour
     ItemDragHandler itemIndex;
     private GameObject target;
     ObjMove objMove;
+    public GameObject gridTile;
+    public GameObject dustFactory;
   public enum Furniture_Type
     {
         Sofa,
@@ -29,20 +31,36 @@ public class Select : MonoBehaviour
 
     {
 
-        if (Input.GetMouseButtonDown(2))
+        if (Input.GetMouseButton(0))
 
         {
        
             target = GetClickedObject();
             print("D");
-            if (target.Equals(gameObject))  //선택된게 나라면
+            if (target != null && target.Equals(gameObject))  //선택된게 나라면
 
             {
                 
                 objMove.trTarget = furniture[0].transform;
+                if (objMove.trTarget.transform.position == gridTile.transform.position)
+                {
+                    print("맞음");
+
+                }
 
             }
 
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+
+            if (objMove.trTarget.transform.position == gridTile.transform.position)
+            {
+
+                GameObject dust = Instantiate(dustFactory);
+                dust.transform.position = transform.position;
+                print("땠음");
+            }
         }
 
     }

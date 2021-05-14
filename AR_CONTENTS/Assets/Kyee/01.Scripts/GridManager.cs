@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GridManager : MonoBehaviour
 {
@@ -14,11 +15,13 @@ public class GridManager : MonoBehaviour
 
     public int tileSize = 5;
     public int hCount = 5;
-    public GameObject cube;
-    public GameObject cube2;
-    //public GameObject gridTile;
-    //public GameObject gridTile2;
+    
+    
+    public GameObject[] furnitures;
+    public GameObject[] grids;
 
+
+    
 
     void Start()
     {
@@ -28,8 +31,8 @@ public class GridManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if(Input.GetMouseButton(0))
+
+        if (Input.GetMouseButton(0))
         {
             //int x = (int)Input.mousePosition.x;
             //int y = (int)Input.mousePosition.y;
@@ -37,56 +40,85 @@ public class GridManager : MonoBehaviour
             //int index = (x / tileSize) + (y / tileSize) * hCount;
             //print("현재 클릭한 곳 : " + index);
 
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hits;
-            
-            if(Physics.Raycast(ray, out hits ))
-            {
-                
-                
-                //if(cube.transform.position == gridTile.transform.position)
-                //{
+            //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            //RaycastHit hits;
 
-                //    print("맞음");
-                    
-                //}
-
-                //if(cube2.transform.position == gridTile2.transform.position)
-                //{
-
-                //    print("두번째도 맞음");
-                //}
-                    
-
-                    //Scormanager UI 에 점수를 올린다.
-
-                
-                
-                
-
-                // 각 그리드에 해당 오브젝트 정보가 담겨있다
-                // 마우스 클릭한 곳의 오브젝트 정보를 가져와라
-                // 만약 오브젝트가 마우스 클릭한 곳의 정보와 같다면 프린트 ("같음")
-
-            }
-
-           
+            //if (Physics.Raycast(ray, out hits))
+            //{
+            //}
 
         }
-        //if(Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0))
+        {
+            Check();
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Check();
+        }
+
+            
+        //}
+        //if (Input.GetMouseButtonUp(1))
         //{
 
-        //    if (cube.transform.position == gridTile.transform.position)
+        //    if (GridComplete())
         //    {
-
-        //        print("아님");
-
+        //        print("클리어");
         //    }
-
         //}
+        
+    }
+
+    public void Check()
+    {
+        if (GridComplete())
+        {
+            print("클리어");
+            SceneManager.LoadScene("ClearScene");
+        }
+    }
+
+    bool GridComplete()
+    {
+        if (Vector3.Distance(furnitures[0].transform.position , grids[0].transform.position)>2)
+            return false;
+        if (Vector3.Angle(furnitures[0].transform.forward ,grids[0].transform.forward) > 5)
+            return false;
+
+
+        if (furnitures[1].transform.position != grids[1].transform.position)
+            return false;
+        if (Vector3.Angle(furnitures[1].transform.right, grids[1].transform.right) > 5)
+            return false;
+
+        if (furnitures[2].transform.position != grids[2].transform.position)
+            return false;
+        if (Vector3.Angle(furnitures[2].transform.forward, grids[2].transform.forward) > 5)
+            return false;
+
+        if (furnitures[3].transform.position != grids[3].transform.position)
+            return false;
+        if (Vector3.Angle(furnitures[3].transform.forward, grids[3].transform.forward) > 5)
+            return false;
+
+        if (furnitures[4].transform.position != grids[4].transform.position)
+            return false;
+        if (Vector3.Angle(furnitures[4].transform.forward, grids[4].transform.forward) > 5)
+            return false;
+
+        else
+            return true;
 
         
 
+        
     }
+ }
+
     
-}
+    
+
+
+        

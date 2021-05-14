@@ -59,7 +59,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
         print("이동" + index);
         
         //furniture가 가지고 있는 것 중 [0~4]사이에 있는 것을 골라서 오브젝트의 위치 값을 따라서 그리드 단위로 이동.
-        objMove.trTarget = furniture[index].transform;
+        //objMove.trTarget = furniture[index].transform;
         
         //드래그 할때 이미지가 마우스 포지션 따라가는것
         transform.position = Input.mousePosition;
