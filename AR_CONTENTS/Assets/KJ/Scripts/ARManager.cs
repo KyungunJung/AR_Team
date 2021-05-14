@@ -38,7 +38,7 @@ public class ARManager : MonoBehaviour
     void Start()
     {
         rayManager = GetComponent<ARRaycastManager>();
-        Grid.SetActive(false);
+       // Grid.SetActive(false);
     }
 
     // Update is called once per frame
@@ -50,9 +50,9 @@ public class ARManager : MonoBehaviour
 #if UNITY_EDITOR
         RaycastHit hit;
 
-        int layer = 1 << LayerMask.NameToLayer("Ground");
+       // int layer = 1 << LayerMask.NameToLayer("Ground");
 
-        if (Physics.Raycast(ray, out hit, 100, layer))
+        if (Physics.Raycast(ray, out hit, 100))
         {
 
             DetectedGround(hit.point);

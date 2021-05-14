@@ -23,33 +23,71 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
     private void Start()
     {
         objMove = GameObject.Find("Grid").GetComponent<ObjMove>();
+     
     }
     
 
     public void OnClickSofa()
     {
         index = (int)Furniture_Type.Sofa;
-        objMove.trTarget = furniture[index].transform;
+        if(furniture[index].GetComponent<Select>().enabled == true)
+        {
+            objMove.trTarget = furniture[index].transform;
+        }
+        else
+        {
+            objMove.trTarget = null;
+        }
     }
     public void OnClickChair()
     {
         index = (int)Furniture_Type.Chair;
+
+     if(furniture[index].GetComponent<Select>().enabled == true)
+        {
         objMove.trTarget = furniture[index].transform;
+        }
+     else
+        {
+            objMove.trTarget = null;
+        }
     }
     public void OnClickTable()
     {
         index = (int)Furniture_Type.Table;
-        objMove.trTarget = furniture[index].transform;
+        if (furniture[index].GetComponent<Select>().enabled == true)
+        {
+            objMove.trTarget = furniture[index].transform;
+        }
+        else
+        {
+            objMove.trTarget = null;
+        }
     }
     public void OnClickCabinet()
     {
         index = (int)Furniture_Type.Cabinet;
+            if(furniture[index].GetComponent<Select>().enabled == true)
+            {
         objMove.trTarget = furniture[index].transform;
+
+            }
+            else
+            {
+                objMove.trTarget = null;
+            }
     }
     public void OnClickLight()
     {
         index = (int)Furniture_Type.Light;
+        if(furniture[index].GetComponent<Select>().enabled == true)
+        {
         objMove.trTarget = furniture[index].transform;
+        }
+        else
+        {
+            objMove.trTarget = null;
+        }
     }
 
 
@@ -59,7 +97,7 @@ public class ItemDragHandler : MonoBehaviour, IDragHandler, IEndDragHandler
         print("이동" + index);
         
         //furniture가 가지고 있는 것 중 [0~4]사이에 있는 것을 골라서 오브젝트의 위치 값을 따라서 그리드 단위로 이동.
-        //objMove.trTarget = furniture[index].transform;
+       // objMove.trTarget = furniture[index].transform;
         
         //드래그 할때 이미지가 마우스 포지션 따라가는것
         transform.position = Input.mousePosition;

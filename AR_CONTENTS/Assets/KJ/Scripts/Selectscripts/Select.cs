@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 public class Select : MonoBehaviour
 {
     int _index;
     ItemDragHandler itemIndex;
     private GameObject target;
     ObjMove objMove;
-    public GameObject gridTile;
-    public GameObject dustFactory;
-  public enum Furniture_Type
+    float fixedRotation = 0;
+    public Transform t;
+
+    public int furnitureIdx;
+   
+    
+    public enum Furniture_Type
     {
         Sofa,
         Chair,
@@ -30,40 +34,26 @@ public class Select : MonoBehaviour
     void Update()
 
     {
+        //카메라가 보는 방향으로 움직이기
+        t.transform.forward = Camera.main.transform.forward;
 
-        if (Input.GetMouseButton(0))
+        //y축 고정시키기
+        t.eulerAngles = new Vector3(fixedRotation, t.eulerAngles.y, fixedRotation);
 
+
+
+        if (Input.GetMouseButtonDown(0))
         {
-       
-            target = GetClickedObject();
-            print("D");
-            if (target != null && target.Equals(gameObject))  //선택된게 나라면
-
-            {
-                
-                objMove.trTarget = furniture[0].transform;
-                if (objMove.trTarget.transform.position == gridTile.transform.position)
+          
+                target = GetClickedObject();
+                if (target != null && target.Equals(gameObject))  //선택된게 나라면
                 {
-                    print("맞음");
-
+                    objMove.trTarget = furniture[furnitureIdx].transform;
+                print("D");
                 }
 
             }
-
         }
-        if (Input.GetMouseButtonUp(0))
-        {
-
-            if (objMove.trTarget.transform.position == gridTile.transform.position)
-            {
-
-                GameObject dust = Instantiate(dustFactory);
-                dust.transform.position = transform.position;
-                print("땠음");
-            }
-        }
-
-    }
     private GameObject GetClickedObject()
 
     {
@@ -78,14 +68,21 @@ public class Select : MonoBehaviour
         {
             
             _index = itemIndex.index;
-            print("레이");
             target = hit.transform.gameObject;
            
-
         }
         return target;
     }
 
+    public void SetRock()
+    {
+        enabled = false;
+
+        if(objMove.trTarget != null)
+        {
+            objMove.trTarget = null;
+        }
+    }
 }
 
 
