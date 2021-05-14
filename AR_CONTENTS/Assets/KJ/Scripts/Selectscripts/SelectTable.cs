@@ -29,7 +29,7 @@ public class SelectTable : MonoBehaviour
 
     {
 
-        if (Input.GetMouseButtonDown(2))
+        if (Input.GetMouseButtonDown(0))
 
         {
 

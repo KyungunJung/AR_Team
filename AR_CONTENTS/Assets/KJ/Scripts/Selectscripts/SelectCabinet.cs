@@ -33,7 +33,7 @@ public class SelectCabinet : MonoBehaviour
 
     {
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(2))
 
         {
 

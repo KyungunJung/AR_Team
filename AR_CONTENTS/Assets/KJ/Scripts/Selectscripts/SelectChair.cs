@@ -9,6 +9,9 @@ public class SelectChair : MonoBehaviour
     private GameObject target;
     ObjMove objMove;
     public GameObject gridTile;
+    float fixedRotation = 0;
+    public Transform t;
+
     public enum Furniture_Type
     {
         Sofa,
@@ -29,8 +32,13 @@ public class SelectChair : MonoBehaviour
     void Update()
 
     {
+        //카메라가 보는 방향으로 움직이기
+        t.transform.forward = Camera.main.transform.forward;
 
-        if (Input.GetMouseButton(0))
+        //y축 고정시키기
+        t.eulerAngles = new Vector3(fixedRotation, t.eulerAngles.y, fixedRotation);
+
+        if (Input.GetMouseButtonDown(0))
 
         {
 
