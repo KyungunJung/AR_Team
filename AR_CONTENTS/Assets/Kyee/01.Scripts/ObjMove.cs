@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 public class ObjMove : MonoBehaviour
 {
     public Transform trTarget;
-    //public Transform[] models;
+    public Transform[] models;
     private void Update()
     {
 
@@ -32,21 +32,22 @@ public class ObjMove : MonoBehaviour
             }
         }
     }
+
 }
 
-// 왼쪽 마우스 버튼을 한번 더 클릭하면 오브젝트 회전 (수정사항)
-//    if (Input.GetMouseButtonDown(1))
-//{
+        //왼쪽 마우스 버튼을 한번 더 클릭하면 오브젝트 회전 (수정사항)
+        //if (Input.GetMouseButtonDown(1))
+        //{
+            
+        //    trTarget.transform.Rotate(new Vector3(0, 45, 0));
 
-//    trTarget.transform.Rotate(new Vector3(0, 45, 0));
+        //    for (int i = 0; i < models.Length; i++)
+        //    {
+        //        models[i].transform.Rotate(new Vector3(0, 45, 0));
+        //    }
 
-//for (int i = 0; i < models.Length; i++)
-//{
-//    models[i].transform.Rotate(new Vector3(0, 45, 0));
-//}
+        //}
+    
 
-//        }
-//    }
-//}
 
 

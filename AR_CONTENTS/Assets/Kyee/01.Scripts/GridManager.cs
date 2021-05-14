@@ -88,22 +88,22 @@ public class GridManager : MonoBehaviour
             return false;
 
 
-        if (furnitures[1].transform.position != grids[1].transform.position)
+        if (Vector3.Distance(furnitures[1].transform.position, grids[1].transform.position) > 2)
             return false;
         if (Vector3.Angle(furnitures[1].transform.right, grids[1].transform.right) > 5)
             return false;
 
-        if (furnitures[2].transform.position != grids[2].transform.position)
+        if (Vector3.Distance(furnitures[2].transform.position, grids[2].transform.position) > 2)
             return false;
         if (Vector3.Angle(furnitures[2].transform.forward, grids[2].transform.forward) > 5)
             return false;
 
-        if (furnitures[3].transform.position != grids[3].transform.position)
+        if (Vector3.Distance(furnitures[3].transform.position, grids[3].transform.position) > 2)
             return false;
         if (Vector3.Angle(furnitures[3].transform.forward, grids[3].transform.forward) > 5)
             return false;
 
-        if (furnitures[4].transform.position != grids[4].transform.position)
+        if (Vector3.Distance(furnitures[4].transform.position, grids[4].transform.position) > 2)
             return false;
         if (Vector3.Angle(furnitures[4].transform.forward, grids[4].transform.forward) > 5)
             return false;

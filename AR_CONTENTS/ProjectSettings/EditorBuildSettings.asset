@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/KJ/Scene/FirstScene.unity
+    guid: 4006a0ef8cccec0479a2358748f1f4ae
+  - enabled: 1
+    path: Assets/Kyee/03.Scene/ClearScene.unity
+    guid: 777d8b28ea1b0b841b86bcf67cf04dae
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: b06ab5d2eeded474390a530787852910, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 38e0e463f86cc4d4480b779ed9925028, type: 2}
