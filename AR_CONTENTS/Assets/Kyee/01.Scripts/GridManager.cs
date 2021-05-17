@@ -32,8 +32,8 @@ public class GridManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetMouseButton(0))
-        {
+    //       if (Input.GetMouseButton(0))
+      //  {
             //int x = (int)Input.mousePosition.x;
             //int y = (int)Input.mousePosition.y;
 
@@ -47,16 +47,18 @@ public class GridManager : MonoBehaviour
             //{
             //}
 
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            Check();
-        }
+        //}
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    Check();
+        //    print("체크중");
+        //}
+        //if (Input.GetMouseButtonUp(0))
+        //{
+        //    Check();
+        //    print("체크중");
+        //}
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            Check();
-        }
 
             
         //}
@@ -87,26 +89,25 @@ public class GridManager : MonoBehaviour
         if (Vector3.Angle(furnitures[0].transform.forward ,grids[0].transform.forward) > 5)
             return false;
 
-
-        if (Vector3.Distance(furnitures[1].transform.position, grids[1].transform.position) > 2)
-            return false;
-        if (Vector3.Angle(furnitures[1].transform.right, grids[1].transform.right) > 5)
-            return false;
+        //if (Vector3.Distance(furnitures[1].transform.position, grids[1].transform.position) > 2)
+        //    return false;
+        //if (Vector3.Angle(furnitures[1].transform.right, grids[1].transform.right) > 5)
+        //    return false;
 
         if (Vector3.Distance(furnitures[2].transform.position, grids[2].transform.position) > 2)
             return false;
         if (Vector3.Angle(furnitures[2].transform.forward, grids[2].transform.forward) > 5)
             return false;
 
-        if (Vector3.Distance(furnitures[3].transform.position, grids[3].transform.position) > 2)
-            return false;
-        if (Vector3.Angle(furnitures[3].transform.forward, grids[3].transform.forward) > 5)
-            return false;
+        //if (Vector3.Distance(furnitures[3].transform.position, grids[3].transform.position) > 2)
+        //    return false;
+        //if (Vector3.Angle(furnitures[3].transform.forward, grids[3].transform.forward) > 5)
+        //    return false;
 
-        if (Vector3.Distance(furnitures[4].transform.position, grids[4].transform.position) > 2)
-            return false;
-        if (Vector3.Angle(furnitures[4].transform.forward, grids[4].transform.forward) > 5)
-            return false;
+        //if (Vector3.Distance(furnitures[4].transform.position, grids[4].transform.position) > 2)
+        //    return false;
+        //if (Vector3.Angle(furnitures[4].transform.forward, grids[4].transform.forward) > 5)
+        //    return false;
 
         else
             return true;

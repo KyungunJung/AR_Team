@@ -39,10 +39,10 @@ public class Select : MonoBehaviour
 
     {
         //카메라가 보는 방향으로 움직이기
-        t.transform.forward = Camera.main.transform.forward;
+       // t.transform.forward = Camera.main.transform.forward;
 
         //y축 고정시키기
-        t.eulerAngles = new Vector3(fixedRotation, t.eulerAngles.y, fixedRotation);
+       // t.eulerAngles = new Vector3(fixedRotation, t.eulerAngles.y, fixedRotation);
 
 
 
@@ -56,17 +56,6 @@ public class Select : MonoBehaviour
             {
                 objMove.trTarget = furniture[furnitureIdx].transform;
 
-                if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)== false)//UI위에 있으면 if안의 것 하지마라
-                {
-                    print("인식");
-
-                    //타겟 값을 null값으로 빼주자.
-
-                    objMove.trTarget = null;
-
-
-                    print("D");
-                }
 
             }
 
