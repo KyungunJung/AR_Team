@@ -96,7 +96,7 @@ public class GridManager : MonoBehaviour
 
         if (Vector3.Distance(furnitures[2].transform.position, grids[2].transform.position) > 2)
             return false;
-        if (Vector3.Angle(furnitures[2].transform.forward, grids[2].transform.forward) > 5)
+        if (Vector3.Angle(furnitures[2].transform.forward, grids[2].transform.forward) > 364)
             return false;
 
         if (Vector3.Distance(furnitures[3].transform.position, grids[3].transform.position) > 2)
@@ -106,15 +106,11 @@ public class GridManager : MonoBehaviour
 
         if (Vector3.Distance(furnitures[4].transform.position, grids[4].transform.position) > 2)
             return false;
-        if (Vector3.Angle(furnitures[4].transform.forward, grids[4].transform.forward) > 179)
+        if (Vector3.Angle(furnitures[4].transform.forward, grids[4].transform.forward) > 364)
             return false;
 
         else
             return true;
-
-        
-
-        
     }
  }
 

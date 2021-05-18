@@ -107,7 +107,3 @@ public class Select : MonoBehaviour
         }
     }
 }
-
-
-
-

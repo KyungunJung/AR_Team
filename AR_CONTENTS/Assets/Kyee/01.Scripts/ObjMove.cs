@@ -13,8 +13,8 @@ public class ObjMove : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         
-            if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId) == false)
-           // if (EventSystem.current.IsPointerOverGameObject() == false)
+            //if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId) == false)
+           if (EventSystem.current.IsPointerOverGameObject() == false)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
