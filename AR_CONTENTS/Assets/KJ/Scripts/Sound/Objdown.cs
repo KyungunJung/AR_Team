@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bgmBtn : MonoBehaviour
+public class Objdown : MonoBehaviour
 {
-   
-    void Start()
-    {
-        
-    }
+  public AudioSource objdown;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonUp(0))
+        {
+            objdown.Play();
+        }
     }
 }

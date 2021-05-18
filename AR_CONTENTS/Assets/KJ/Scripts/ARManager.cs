@@ -50,7 +50,7 @@ public class ARManager : MonoBehaviour
 #if UNITY_EDITOR
         RaycastHit hit;
 
-       // int layer = 1 << LayerMask.NameToLayer("Ground");
+        int layer = 1 << LayerMask.NameToLayer("Ground");
 
         if (Physics.Raycast(ray, out hit, 100))
         {

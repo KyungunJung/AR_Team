@@ -20,7 +20,7 @@ public class Lock : MonoBehaviour
 
     public void OnClicklock()
     {
-        clear.Check();
+           clear.Check();
             Script.GetComponentInParent<Select>().SetRock();
 
             UnlockBtn.SetActive(true);
