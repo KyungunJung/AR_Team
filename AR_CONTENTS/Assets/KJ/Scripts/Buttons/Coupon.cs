@@ -8,6 +8,7 @@ public class Coupon : MonoBehaviour
     public Image DrawImage; // 랜덤 이미지를 출력할 오브젝트
 
     //숫자 이미지
+    public Sprite image0;
     public Sprite Image1;
     public Sprite Image2;
     public Sprite Image3;
@@ -31,6 +32,10 @@ public class Coupon : MonoBehaviour
 
     public void OneDraw() // 1회 뽑기 버튼을 클릭 시
     {
+        if(RandomInt == 0)
+        {
+            DrawImage.sprite = image0;
+        }
         
         if (RandomInt == 1) // RandomInt가 1이라면
         {
@@ -78,7 +83,9 @@ public class Coupon : MonoBehaviour
     public void CloseDraw() // 뽑기 스크립트가 실행되고 자동으로 실행되게 합니다.
     {
         //DrawImage.sprite = null; // 적용했던 이미지를 초기화합니다.
-       // gameObject.SetActive(false);
+        //       gameObject.SetActive(false);
+        GetComponent<Button>().interactable = false;
+
     }
     //IEnumerator NextScene()
     //{
