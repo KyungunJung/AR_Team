@@ -12,9 +12,9 @@ public class ObjMove : MonoBehaviour
         //레이가 맞추고 있는 오브젝트의 정보를 담아오기(수정사항)
 
         if (Input.GetMouseButton(0))
-        {
-             //if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId) == false)
-            if (EventSystem.current.IsPointerOverGameObject() == false)
+        
+            //if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId) == false)
+           if (EventSystem.current.IsPointerOverGameObject() == false)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
@@ -48,7 +48,7 @@ public class ObjMove : MonoBehaviour
         //    }
         //}
     }
-}
+
 
 
 

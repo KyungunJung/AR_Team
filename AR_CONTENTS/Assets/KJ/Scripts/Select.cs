@@ -14,8 +14,8 @@ public class Select : MonoBehaviour
     public GameObject gridTile;
     public GameObject dustFactory;
 
-
     public int furnitureIdx;
+    public AudioSource objdown;
 
 
     public enum Furniture_Type
@@ -33,7 +33,6 @@ public class Select : MonoBehaviour
     {
         itemIndex = GameObject.Find("Image").GetComponent<ItemDragHandler>();
         objMove = GameObject.Find("Grid").GetComponent<ObjMove>();
-
     }
     void Update()
 
@@ -58,7 +57,7 @@ public class Select : MonoBehaviour
 
 
             }
-
+            
         }
 
         if (Input.GetMouseButtonUp(0))
@@ -71,6 +70,11 @@ public class Select : MonoBehaviour
                 dust.transform.position = transform.position;
                 print("¶®À½");
             }
+            
+            {
+                objdown.Play();
+            }
+
         }
     }
     private GameObject GetClickedObject()
@@ -103,7 +107,3 @@ public class Select : MonoBehaviour
         }
     }
 }
-
-
-
-
