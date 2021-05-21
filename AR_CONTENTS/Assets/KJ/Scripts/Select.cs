@@ -38,7 +38,7 @@ public class Select : MonoBehaviour
 
     {
         //카메라가 보는 방향으로 움직이기
-        t.transform.forward = Camera.main.transform.forward;
+       // t.transform.forward = Camera.main.transform.forward;
 
         //y축 고정시키기
         t.eulerAngles = new Vector3(fixedRotation, t.eulerAngles.y, fixedRotation);

@@ -6,98 +6,23 @@ using UnityEngine.UI;
 
 public class Manager : MonoBehaviour
 {
+    public static Manager instance;
 
-    public float FadeTime = 2f; // Fade효과 재생시간
+    public GameObject loading;
+    public Image loadingBg;
+    
 
-    Image fadeImg;
-
-    float start;
-
-    float end;
-
-    float time = 0f;
-
-    bool isPlaying = false;
-
-
-
-    void Awake()
-
+    void Update()
     {
-
-        fadeImg = GetComponent<Image>();
-
-        InStartFadeAnim();
-
-    }
-
-    public void OutStartFadeAnim()
-
-    {
-
-        if (isPlaying == true) //중복재생방지
-
+        if(loading.activeSelf == true)
         {
-
-            return;
-
+            Color bgColor = loadingBg.color;
+            bgColor.a += Time.deltaTime*0.5f;
+            loadingBg.color = bgColor;
+            if(bgColor.a <= 0)
+            {
+                loading.SetActive(false);
+            }
         }
-
-        start = 1f;
-
-        end = 0f;
-
-        StartCoroutine("fadeoutplay");    //코루틴 실행
-
-    }
-
-    public void InStartFadeAnim()
-
-    {
-
-        if (isPlaying == true) //중복재생방지
-
-        {
-
-            return;
-
-        }
-
-        StartCoroutine("fadeIntanim");
-
-    }
-
-    IEnumerator fadeoutplay()
-
-    {
-
-        isPlaying = true;
-
-
-
-        Color fadecolor = fadeImg.color;
-
-        time = 0f;
-
-        //color.a = Mathf.Lerp(start, end, time);
-
-
-
-        while (fadecolor.a > 0f)
-
-        {
-
-            time += Time.deltaTime / FadeTime;
-
-            fadecolor.a = Mathf.Lerp(start, end, time);
-
-            fadeImg.color = fadecolor;
-
-            yield return null;
-
-        }
-
-        isPlaying = false;
-
     }
 }

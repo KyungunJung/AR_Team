@@ -6,7 +6,7 @@ public class PlayBtn : MonoBehaviour
 {
     public void OnClickBtn()
     {
-        SceneManager.LoadScene("ModelImage");
+        SceneManager.LoadScene("QuestScene");
     }
 
 }
