@@ -10,7 +10,7 @@ public class goToEnding : MonoBehaviour
     }
     IEnumerator NextScene()
     {
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(4);
         SceneManager.LoadScene("EndingScene");
 
     }
